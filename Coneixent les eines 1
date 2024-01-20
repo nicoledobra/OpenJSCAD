@@ -1,0 +1,12 @@
+ENUNCIAT:
+En Marrameu ha de començar a familiaritzar-se amb les eines que li permetran fabricar la seva clau.
+Ajuda'l a construir un cub com el de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Els costats del cub a construir mesuren 5 cadascun.
+- El cub no es troba centrat.
+
+CODE:
+function main(){
+return cube ( { size: 5, center: false } );}

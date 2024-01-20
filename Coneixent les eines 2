@@ -1,0 +1,11 @@
+ENUNCIAT:
+Ara que en Marrameu ja sap com fer un cub senzill, cal que estorni més agoserat... Ajuda'l a construir un cub com el de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Els costats del cub a construir mesuren: 10 la x, 5 la y i 10 la z.
+- El cub no es troba centrat.
+
+CODE:
+function main(){
+return cube ( { size: [10, 5, 10], center: false } );}

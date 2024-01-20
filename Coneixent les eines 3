@@ -1,0 +1,12 @@
+ENUNCIAT:
+Ara que en Marrameu ha observat que, a vegades, els cubs no es troben totalment centrats...
+Ajuda'l a construir un cub com el de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Els costats del cub a construir mesuren 10 cada cara.
+- El cub es troba centrat.
+
+CODE:
+function main(){
+return cube ( { size: 10, center: true } );}

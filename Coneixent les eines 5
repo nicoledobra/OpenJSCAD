@@ -1,0 +1,10 @@
+ENUNCIAT:
+En Marrameu vol anar més enllà i traslladar el seu cub...
+Ajuda'l a construir un cub com el de la imatge!
+
+AJUDA:
+- Usa el sistema orientat a objectes per construir la figura.
+- Els costats del cub a construir mesuren: 20 la x, 10 la y i 10 la z.
+- El cub es troba centrat a la posició [0, 20, 15].
+
+CODE:

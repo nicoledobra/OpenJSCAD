@@ -8,3 +8,5 @@ AJUDA:
 - El cub es troba centrat a la posició [0, 20, 15].
 
 CODE:
+function main(){
+  return CSG.cube( { center: [0, 20, 15], radius: [20, 10, 10] } );}

@@ -1,0 +1,13 @@
+ENUNCIAT:
+És possible que aquestes figures siguin arrodonides, també?
+Ajuda'l a construir un cub com el de la imatge!
+
+AJUDES:
+- Usa el sistema orientat a objectes per construir la figura.
+- Els costats del cub a construir mesuren: 10 la x, 10 la y i 10 la z.
+- El cub es troba centrat a la posició [20, 0, 30].
+- El cub ha d'estar arrodonit amb uns valor de resolució de 8 i un radi d'arrodoniment de 0,5.
+
+CODE:
+function main(){
+return CSG.roundedCube ( { center: [20, 0, 30], radius: 10, roundradius: 0.5, resolution: 8 } );}

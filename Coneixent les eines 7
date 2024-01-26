@@ -1,0 +1,13 @@
+ENUNCIAT:
+En Marrameu està exprimint al màxim les possibilitats dels seus cubs i les seves caixes!
+Ajuda'l a construir un cub com el de la imatge!
+
+AJUDES:
+- Usa el sistema orientat a objectes per construir la figura.
+- Els costats del cub a construir mesuren: 10 la x, 20 la y i 10 la z.
+- El cub es troba centrat a la posició [0, 0, 0].
+- El cub ha d'estar arrodonit amb uns valor de resolució de 16 i un radi d'arrodoniment de 1,5.
+
+CODE:
+function main(){
+return CSG.roundedCube ( { center: [0, 0, 0], radius: [10, 20, 10], roundradius: 1.5, resolution: 16 } );}

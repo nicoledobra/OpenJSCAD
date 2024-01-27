@@ -1,0 +1,13 @@
+ENUNCIAT:
+En Marrameu s'ha passat! De tant jugar amb l'arrodoniment això ja ni sembla un cub!
+Ajuda'l a construir un cub com el de la imatge!
+
+AJUDES:
+- Usa el sistema orientat a objectes per construir la figura.
+- Els costats del cub a construir mesuren: 10 la x, 10 la y i 10 la z.
+- El cub es troba centrat a la posició [0, 0, 20].
+- El cub ha d'estar arrodonit amb uns valor de resolució de 4 i un radi d'arrodoniment de 10.
+
+CODE:
+function main(){
+return CSG.roundedCube ( { center: [0, 0, 20], radius: 10, roundradius: 10, resolution: 4 } );}

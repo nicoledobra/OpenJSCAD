@@ -1,0 +1,15 @@
+ENUNCIAT:
+En Marrameu està descobrint la potència d'aquestes noves eines. Ara pot anar més enllà de simples cubs!
+Ajuda'l a construir una figura com la de la imatge!
+
+AJUDA:
+- Usa el sistema clàssic per construir la figura.
+- Dibuixa un cub on els seus costats mesurin: 20 la x, 20 la y i 3 la z.
+- Dibuixa un altre cub on els seus costats mesurin: 10 la x, 10 la y i 5 la z.
+- Realitza la unió de les dues figures.
+
+CODE:
+function main (){
+a=cube ( { size: [20, 20, 3] } );
+b=cube ( { size: [10, 10, 5] } );
+return union(a,b);}

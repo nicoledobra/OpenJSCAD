@@ -1,0 +1,17 @@
+ENUNCIAT:
+Les figures que en Marrameu es pot imaginar es compliquen!
+Ajuda'l a construir una figura com la de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Dibuixa un cub on els seus costats mesurin: 20 la x, 20 la y i 3 la z.
+- Dibuixa un altre cub on els seus costats mesurin: 10 la x, 10 la y i 5 la z.
+- Dibuixa un altre cub on els seus costats mesurin: 5 la x, 5 la y i 8 la z.
+- Realitza la unió de les tres figures.
+
+CODE:
+function main (){
+a=cube ( { size: [20, 20, 3] } );
+b=cube ( { size: [10, 10, 5] } );
+c=cube ( { size: [5, 5, 8] } );
+return union(a,b,c);}

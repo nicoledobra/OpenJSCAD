@@ -1,0 +1,18 @@
+Per tal de protegir-se mentre aprèn a dissenyar figures, en Marrameu està treballant en un primer disseny d'un castell! Ajuda'l a construir una figura com la de la imatge! Ajudes:
+- Usa el sistema orientat a objectes per construir la figura.
+- Dibuixa un cub on els seus costats mesurin: 20 la x, 20 la y i 4 la z, i que es trobi centrat al punt [0, 0, 4].
+- Dibuixa un cub on els seus costats mesurin: 5 la x, 5 la y i 8 la z, i que es trobi centrat al punt [15, 15, 8].
+- Dibuixa un cub on els seus costats mesurin: 5 la x, 5 la y i 8 la z, i que es trobi centrat al punt [-15, -15, 8].
+- Dibuixa un cub on els seus costats mesurin: 5 la x, 5 la y i 8 la z, i que es trobi centrat al punt [-15, 15, 8].
+- Dibuixa un cub on els seus costats mesurin: 5 la x, 5 la y i 8 la z, i que es trobi centrat al punt [15, -15, 8].
+- Realitza la unió de les cinc figures.
+
+code:
+
+function main (){
+a= CSG.cube ( { radius: [20, 20, 4], center: [0, 0, 4] } );
+b= CSG.cube ( { radius: [5, 5, 8], center: [15, 15, 8] } );
+c= CSG.cube ( { radius: [5, 5, 8], center: [-15, -15, 8] } );
+  d= CSG.cube ( { radius: [5, 5, 8], center: [-15, 15, 8] } );
+  e= CSG.cube ( { radius: [5, 5, 8], center: [15, -15, 8] } );
+return union(a,b,c,d,e);}

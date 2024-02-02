@@ -1,0 +1,10 @@
+I que me'n dieu dels rectangles arrodonits? Creieu que en Marrameu pot ser capaç de crear-los?
+Ajuda'l a construir una figura com la de la imatge!
+Ajudes:
+- Usa el sistema orientat a objectes per construir la figura.
+- Dibuixa un rectangle arrodonit de costats 10 i 20, que es trobi centrat a l'origen de coordenades [0, 0], que tingui un radi d'arrodoniment de 1, i una resolució de 4.
+
+codi:
+
+function main(){
+return CAG.roundedRectangle( { center: [0, 0], radius: [10, 20], roundradius: 1, resolution: 4 } );}

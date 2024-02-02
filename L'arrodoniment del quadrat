@@ -1,0 +1,11 @@
+I on es troba el límit de l'arrodoniment, es pregunta en Marrameu?
+Ajuda'l a construir una figura com la de la imatge!
+Ajudes:
+- Usa el sistema orientat a objectes per construir la figura.
+- Dibuixa un rectangle de costats 10 i 5, centrat a les coordenades [0, 0], amb un radi d'arrodoniment 10 i una resolució de 32.
+
+codi:
+
+function main(){
+return CAG.roundedRectangle( { center: [0, 0], radius: [10, 5]
+                              , roundradius: 10, resolution: 32 } );}

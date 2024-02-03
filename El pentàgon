@@ -1,0 +1,16 @@
+És l'hora de complicar les construccions! Així, en Marrameu s'ha decidit per començar dibuixant un polígon de cinc costats...
+Ajuda'l a construir una figura com la de la imatge!
+Ajudes:
+- Usa el sistema orientat a objectes per construir la figura.
+- Dibuixa un polígon que es trobi definit pels següents punts:
+- [ 0, 0 ]
+- [ 30, 0 ]
+- [ 40.5, 20 ]
+- [10.5, 40]
+- [ -10.5, 20 ]
+
+codi:
+function main(){
+return CAG.fromPoints( [[0, 0], [30, 0], [40.5, 20],
+                        [10.5, 40], [-10.5, 20]])}
+                        

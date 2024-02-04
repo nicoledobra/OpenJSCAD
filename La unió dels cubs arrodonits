@@ -1,0 +1,21 @@
+El super cub està creat! Ara bé, potser caldria fer-lo una mica més atractiu, no?
+Ajuda'l a construir una figura com la de la imatge!
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Dibuixa un cub arrodonit amb mida de costats 10.
+- Dibuixa un altre cub arrodonit de mida de costats 10. Aquest segon cub, rota'l 45º sobre l'eix de les x, i trasllada'l a les coordenades [0, 5, -2.5].
+- Trasllada el resultat de la unió a les coordenades [0, 0, 10] i retorna-ho com a resultat.
+
+codi:
+
+function main(){
+  a=CSG.roundedCube ( { center: [0, 5, -2.5], radius: 5, 
+                       roundradius: 1} );
+  b=CSG.roundedCube ( { center: [0, 0, 0], radius: 5, 
+                       roundradius: 1} );
+  c=b.rotateX ( 45);
+  d=translate ( [0, 5, -2.5], c);
+ e=union(a, d);
+ f=translate ( [-2.5, 10, 10], e);
+  return f;}

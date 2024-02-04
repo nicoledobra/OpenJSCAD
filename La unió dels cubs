@@ -1,0 +1,16 @@
+ENUNCIAT:
+Anem a aplicar totes aquestes transformacions en un super cub unit!
+Ajuda'l a construir una figura com la de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Dibuixa un cub amb mida de costats 10.
+- Dibuixa un altre cub de mida de costats 10. Aquest segon cub, rotal 45º sobre l'eix de les x, i trasllada'l a les coordenades [0, 5, -2.5].
+- Finalment, retorna la unió de les dues figures.
+
+CODE:
+function main(){
+  a=cube(10);
+  b= rotate ( [45, 0, 0], cube (10) );
+  c=translate ( [0, 5, -2.5], b);
+return union(a, c);}

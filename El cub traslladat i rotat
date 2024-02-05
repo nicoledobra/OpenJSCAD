@@ -1,0 +1,13 @@
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Dibuixa un cub amb mida de costats 10.
+- Trasllada aquest cub a les coordenades [10, 10, 10].
+- Rota el cub 45º sobre l'eix de les x i retorna-ho com a resultat.
+
+codi:
+
+function main(){
+a= cube(10);
+b=translate([10, 10, 10], a);
+result = b.rotateX ( 45 );
+  return result;}

@@ -1,0 +1,18 @@
+Ajuda'l a construir una figura com la de la imatge!
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Dibuixa un cub amb mida de costats 10.
+- Trasllada aquest cub a les coordenades [10, 10, 10].
+- Rota el cub 45º sobre l'eix de les x.
+- Escala el cub de tal manera que es mantingui l'escala a l'eix de les X, que es multipliqui per 5 l'escala a l'eix de les y i finalment, 
+redueixi a la meitat l'escala de l'eix de les z, i retorna-ho com a resultat.
+
+codi:
+
+function main(){
+  a= cube(10);
+  b= translate ( 10, cube ( 10 ) );
+  c = rotate ( [45, 0, 0], b );
+  result = scale ( [1, 5, 0.5], c); 
+return result;
+}

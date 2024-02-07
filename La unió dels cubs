@@ -12,5 +12,5 @@ CODE:
 function main(){
   a=cube(10);
   b= rotate ( [45, 0, 0], cube (10) );
-  c=translate ( [0, 5, -2.5], b);
+  c=translate ( [0, 5, 0.5], b);
 return union(a, c);}

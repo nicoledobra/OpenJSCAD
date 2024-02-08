@@ -1,0 +1,15 @@
+ENUNCIAT:
+En Marràmeu està començant a dominar les transformacions! En Marrameu recorda que a la Fada li agradava molt un símbol... a veure si és capaç de reconstruir-lo per fer-li senyals!
+Ajuda'l a construir una figura com la de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Crea un cercle de radi 10 i emmagatzema'l en una variable de nom x.
+- Crea un nou cercle de radi 5 i trasllada'l a les coordenades [15, 15]. Emmagatzema el resultat en una variable de nom a.
+- Retorna el resultat de la unió de les variables a i x.
+
+CODE:
+function main(){
+x = circle( 10 );
+a = translate ( [15, 15], circle ( 5 ) );;
+return union(a, x);}

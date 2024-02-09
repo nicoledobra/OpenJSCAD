@@ -1,0 +1,18 @@
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Crea un cercle de radi 10 i emmagatzema'l en una variable de nom x.
+- Crea un nou cercle de radi 5 i trasllada'l a les coordenades [15, 15]. Emmagatzema el resultat en una variable de nom a.
+- Crea un nou cercle de radi 5 i trasllada'l a les coordenades [15, -5]. Emmagatzema el resultat en una variable de nom b.
+- Crea un nou cercle de radi 5 i trasllada'l a les coordenades [-5, 15]. Emmagatzema el resultat en una variable de nom c.
+- Crea un nou cercle de radi 5 i trasllada'l a les coordenades [-5, -5]. Emmagatzema el resultat en una variable de nom d.
+- Retorna el resultat de la unió de les variables a, b, c, d i x.
+
+code:
+
+function main(){
+x = circle( 10 );
+a = translate ( [15, 15], circle ( 5 ) );
+b = translate ( [15, -5], circle ( 5 ) );
+  c = translate ( [-5, 15], circle ( 5 ) );
+d = translate ( [-5, -5], circle ( 5 ) );
+return union(a, b, c, d, x);}

@@ -1,0 +1,20 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+
+- Crea un cercle de radi 5 i trasllada'l a les coordenades [-10, 0, 0].
+
+- Crea un nou cercle de radi 5 i trasllada'l a les coordenades [10, 10, 0].
+
+- Emmagatzema en una variable de nom y la closca (hull) formada pels dos cercles que has creat.
+
+- Retorna l'extrusió linial d'alçada 80, 360º de gir i 100 capes de la variable y.
+
+code:
+
+function main(){
+  y=hull(circle ( 5 ).translate ( [-10,0,0] ), 
+         circle ( 5 ).translate ( [10,10,0] ));
+  a=linear_extrude( {height: 80, twist: 360, slices: 100}, y);
+  return a;
+}

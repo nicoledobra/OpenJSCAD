@@ -1,0 +1,19 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+
+- Crea un cercle de radi 10 i trasllada'l a les coordenades [-10, 0, 0].
+
+- Crea un nou cercle de radi 10 i trasllada'l a les coordenades [10, 10, 0].
+
+- Finalment, retorna la closca formada pels dos cercles que has creat.
+
+code:
+
+function main(){
+  a=hull(circle ( 10 ).translate ( [-10,0,0] ), 
+         circle ( 10 ).translate ( [10,10,0] ));
+
+  return a;
+}
+

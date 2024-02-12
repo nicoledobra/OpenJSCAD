@@ -1,0 +1,17 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea un cercle de radi 1 i trasllada'l a les coordenades [0, 0]. Emmagatzema el resultat a una variable anomenada a.
+- Crea un cercle de radi 2 i trasllada'l a les coordenades [5, 15]. Emmagatzema el resultat a una variable anomenada b.
+- Crea un cercle de radi 5 i trasllada'l a les coordenades [20, 25]. Emmagatzema el resultat a una variable anomenada c.
+- Retorna l'extrusió linial d'alçada 10 de fer una closca encadenada (chain_hull) de les variables a, b i c.
+
+code:
+function main(){
+  a=circle(1).translate([0,0]);
+  b=circle(2).translate([5,15]);
+  c=circle(5).translate([20,25]);
+  d=chain_hull ( a, b, c);
+  e= linear_extrude ( {height: 10 }, d );
+  return e;
+}

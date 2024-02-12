@@ -1,0 +1,8 @@
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Crea una esfera de radi 10 i trasllada-la a les coordenades [0, 0, 20]. Finalment retorna aquesta figura com a resultat.
+
+CODE:
+function main(){
+  resultat=translate( [0, 0, 20], sphere(10) );
+return resultat;}

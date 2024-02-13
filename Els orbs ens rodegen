@@ -1,0 +1,17 @@
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Crea una esfera de radi 5 i resolució 4 i trasllada-la a les coordenades [0, 0, 20]. Emmagatzema aquesta esfera en una variable de nom a.
+- Crea una esfera de radi 5 i resolució 6 i trasllada-la a les coordenades [0, 20, 20]. Emmagatzema aquesta esfera en una variable de nom b.
+- Crea una esfera de radi 5 i resolució 8 i trasllada-la a les coordenades [20, 20, 20]. Emmagatzema aquesta esfera en una variable de nom c.
+- Crea una esfera de radi 5 i resolució 10 i trasllada-la a les coordenades [20, 0, 20]. Emmagatzema aquesta esfera en una variable de nom d.
+- Finalment retorna la unió de les esferes a, b, c i d.
+
+CODE:
+
+function main(){
+a=translate( [0, 0, 20], sphere( {r: 5, fn: 4} ) );
+  b=translate( [0, 20, 20], sphere( {r: 5, fn: 6} ) );
+  c=translate( [20, 20, 20], sphere( {r: 5, fn: 8} ) );
+  d=translate( [20, 0, 20], sphere( {r: 5, fn: 10} ) );
+  e=union(a,b,c,d);
+return e;}

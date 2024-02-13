@@ -1,0 +1,12 @@
+ENUNCIAT:
+Què és això? En Bàbar deu estar una mica espès... els orbs estan deformats! Seguim la pista a veure què està passant...
+Ajuda'l a construir una figura com la de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura..
+- Crea una esfera de radi 5 i resolució 4 i trasllada-la a les coordenades [0, 0, 20]. Finalment retorna aquesta figura com a resultat.
+
+CODE:
+function main(){
+a=translate( [0, 0, 20], sphere( {r: 5, fn: 4} ) );
+return a;}

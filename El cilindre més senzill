@@ -1,0 +1,11 @@
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Crea un cilindre amb radi de base 10, amb radi de sostre 5 i altura 20. Afegeix una resolució de 3 per a la figura. El cilindre no ha d'estar centrat.
+- Finalment retorna aquest cilindre.
+
+code:
+
+function main(){
+a=cylinder ( { r1: 10, r2: 5, h: 20, fn: 3} )
+return a;
+}

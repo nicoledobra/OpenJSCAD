@@ -1,0 +1,12 @@
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Crea un cilindre amb radi de base 10, amb radi de sostre 4 i altura 20. Usa com a resolució 5. El cilindre no ha d'estar centrat. Emmagatzema el resultat en una variable de nom a.
+- Crea una esfera de radi 10 i trasllada-la a les coordenades [0, 0, 25]. Emmagatzema el resultat en una variable de nom b.
+- Finalment retorna la unió de les variables a i b.
+
+CODE:
+function main(){
+  a=cylinder ( { r1: 10, r2: 4, h: 20, fn: 5} );
+  b=translate([0, 0, 25], sphere(10));
+return union(a, b);
+}

@@ -1,0 +1,22 @@
+ENUNCIAT:
+Els misteris d'aquestes noves figures no tenen límit. Es redimensionen i ens rodegen.
+Ajuda als nostres amics a construir una figura com la de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Crea un cilindre amb radi de base 10, amb radi de sostre 5 i altura 20. Assigna una resolució de 5. El cilindre no ha d'estar centrat. Emmagatzema aquesta figura en una variable de nom a.
+- Crea una esfera de radi 10. Trasllada aquesta figura a les coordenades [0, 0, 25]. Emmagatzema aquesta figura en una variable de nom b.
+- Crea una nova variable de nom c i emmagatzema la unió de les figures a i b.
+- Crea una nova variable de nom d, i emmagatzema-hi l'escalat a 0.5 de la figura c, i després trasllada-ho a les coordenades [0, -20, 0].
+- Crea una nova variable de nom e, i emmagatzema-hi l'escalat a 2 de la figura c, i després trasllada-ho a les coordenades [0, 35, 0].
+- Finalment retorna la unió de les figures a, b, d i e.
+
+CODE:
+function main(){
+  a=cylinder ( { r1: 10, r2: 5, h: 20, fn: 5, center: false} );
+  b=translate([0, 0, 25], sphere(10));
+  c=union(a, b);
+  d=translate([0, -20, 0], scale(0.5, c));
+  e=translate([0, 35, 0], scale(2, c));
+return union(a, b, d, e);
+}

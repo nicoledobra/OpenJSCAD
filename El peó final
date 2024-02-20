@@ -1,0 +1,29 @@
+Ajuda als nostres amics a construir una figura com la de la imatge!
+
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Crea la figura en una nova funció de nom peo() (recorda! Com es creaven les funcions en Karel?)
+- Crea un cilindre amb radi de base 10, amb radi de sostre 5 i altura 20. Assigna una resolució de 14. El cilindre no ha d'estar centrat. Emmagatzema aquesta figura en una variable de nom a.
+- Crea una esfera de radi 9. Escala aquesta esfera mantenint les mateixes proporcions per a les x i les y, però usant una propoció de 0.3 per les z. Trasllada aquesta figura a les coordenades [0, 0, 20]. Emmagatzema aquesta figura en una variable de nom b.
+- Crea una esfera de radi 9. Trasllada aquesta esfera a les coordenades [0, 0, 30]. Emmagatzema aquesta figura en una variable de nom c.
+- Crea una nova variable d i emmagatzema-hi la unió de les figures a, b i c, i després trasllada aquesta nova figura a la posició [0, 0, 5].
+- Crea un nou cilindre de radi de base i radi de sostre amb mida 16, i altura 5. Emmagatzema aquesta figura en una variable de nom e.
+- Crea una esfera de radi 16. Escala aquesta esfera mantenint les mateixes proporcions per a les x i les y, però usant una propoció de 0.3 per les z. Trasllada aquesta figura a les coordenades [0, 0, 5]. Emmagatzema aquesta figura en una variable de nom f.
+- Per acabar la funció peo(), fes que aquesta retorni la unió de les figures d, e i f.
+- Finalment, fes que la funció main() retorni la crida a la funció peo(), escalada en una proporció de 0.8 en tots els eixos.
+
+code:
+
+function peo() {
+ a = cylinder({ r1: 10, r2: 5, h: 20, fn: 14 });
+b = translate([0, 0, 20], scale([1, 1, 0.3], sphere({ r: 9 })));
+c = translate([0, 0, 30], sphere({ r: 9 }));
+d = translate([0, 0, 5], union(a, b, c));
+e = cylinder({ r1: 16, r2: 16, h: 5 });
+f = translate([0, 0, 5], scale([1, 1, 0.3], sphere({ r: 16 })));
+  return union(d, e, f);
+}
+
+function main() {
+return scale([0.8, 0.8, 0.8], peo());
+}

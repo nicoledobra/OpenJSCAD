@@ -1,0 +1,41 @@
+ENUNCIAT:
+Superat el cavall, la torre s'interposa al nostre avenç!
+Ajuda als nostres amics a construir una figura com la de la imatge!
+
+AJUDES:
+- Usa el sistema clàssic per construir la figura.
+- Crea la figura en una nova funció de nom torre().
+- Crea un cilindre amb radi de base 10, amb radi de sostre 5 i altura 25. Assigna una resolució de 6. El cilindre no ha d'estar centrat. Emmagatzema aquesta figura en una variable de nom a.
+- Crea un cilindre de radi de base i de radi de sostre 10, d'altura 5 i resolució 8. Trasllada el cilindre a les coordenades [0, 0, 25]. Emmagatzema aquesta figura en una variable de nom b.
+- Crea un cub amb mides [7.7, 2, 4]. Rota'l 22º sobre l'eix de les z. Trasllada el resultat a les coordenades [0, -10, 30]. Emmagatzema aquesta figura en una variable de nom c.
+- Crea un cub amb mides [7.7, 2, 4]. Rota'l 112º sobre l'eix de les z. Trasllada el resultat a les coordenades [10, 0, 30]. Emmagatzema aquesta figura en una variable de nom d.
+- Crea un cub amb mides [7.7, 2, 4]. Rota'l 22º sobre l'eix de les z. Trasllada el resultat a les coordenades [-6.4, 5.3, 30]. Emmagatzema aquesta figura en una variable de nom e.
+- Crea un cub amb mides [7.7, 2, 4]. Rota'l 112º sobre l'eix de les z. Trasllada el resultat a les coordenades [-5.3, -6.3, 30]. Emmagatzema aquesta figura en una variable de nom f.
+- Crea la unió de les figures a, b, c, d, e i f, trasllada el resultat a les coordenades [0, 0, 5] i emmagatzema el resultat en una variable de nom g.
+- Crea un cilindre de radi de base i radi de sostre 16, i altura 5. Emmagatzema el resultat en una variable de nom h.
+- Crea una esfera de radi 16. Escala aquesta esfera mantenint les mateixes proporcions per a les x i les y, però usant una propoció de 0.3 per les z.
+  Trasllada aquesta figura a les coordenades [0, 0, 5]. Emmagatzema aquesta figura en una variable de nom i.
+- Per acabar la funció torre(), fes que aquesta retorni la unió de les figures g, h i i.
+- Finalment, fes que la funció main() retorni la crida a la funció torre().
+
+CODE:
+
+function torre(){
+    a= cylinder({r1:10, r2: 5, h: 25, fn:6}); 
+    b= translate([0, 0, 25], cylinder ( { r1:10, r2:10, h: 5, fn:8} ));
+    c= translate ([2.7, -7.8, 30], rotate ([0, 0, 22], CSG.roundedCube({ 
+                           radius: [4, 1, 5]})));
+d= translate ([8, 3, 30], rotate ([0, 0, 112], CSG.roundedCube({ 
+                           radius: [4, 1, 5]})));
+ e= translate ([-2.7, 7.8, 30], rotate ([0, 0, 22], CSG.roundedCube({ 
+                           radius: [4, 1, 5]})));
+f= translate ([-8, -3, 30], rotate ([0, 0, 112], CSG.roundedCube({ 
+                           radius: [4, 1, 5]})));                           
+ g= translate([0, 0, 5], union (a, b, c, d, e, f));
+ h= cylinder({r1:16, r2: 16, h: 5});
+ i= translate([0, 0, 5], scale ([1, 1, 0.3], sphere (16)));
+    return union (i, h, g);
+}
+function main(){
+    return torre();
+}

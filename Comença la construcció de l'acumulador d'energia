@@ -1,0 +1,21 @@
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Crea una funció de nom escriure(), que rebi un paràmetre s, que serà la cadena ha escriure. Aquesta funció ha d'escriure 
+i retornar la cadena s en 3D (amb una amplada i una altura de 2).
+- Crea la funció main() de tal manera que emmagatzemi en una variable de nom a el resultat de cridar la funció escriure() 
+passant-li la cadena "Codelearn\nPower\nAccumulator". Tot seguit, retorna el resultat d'escalar la variable a un 0.2 en tots els eixos, 
+rotar el resultat 90º sobre l'eix de les x i, finalment, trasllada el resultat a les coordenades [0, 0, 40].
+
+
+function escriure(){
+   s = vector_text(0, 0, "Codelearn\nPower\nAccumulator");
+o = [];
+s.forEach(function(pl) {
+o.push(rectangular_extrude(pl, {w: 2, h: 2}));
+});
+return union(o);
+}
+function main(){
+    return translate([0, 0, 40], scale (0.2, rotate([90, 0, 0], 
+    escriure())));
+}

@@ -1,0 +1,22 @@
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Crea una funció de nom escriure(), que rebi un paràmetre s, que serà la cadena ha escriure. Aquesta funció ha d'escriure 
+i retornar la cadena s en 3D. Per al text heu de fer que el vector de text s'inicii a les coordenades [0, 0] 
+i que la mida de les lletres sigui 2 per l'altura (height) i 2 per a l'amplada (weight) de l'extrussió rectangular de les lletres.
+- Crea la funció main() de tal manera que emmagatzemi en una variable de nom a el resultat de cridar la funció escriure() 
+passant-li la cadena "Codelearn". Tot seguit, retorna el resultat d'escalar la variable a un 0.2 en tots els eixos, 
+i finalment, rota el resultat 90º sobre l'eix de les x.
+
+code:
+
+function escriure(){
+   s = vector_text(0,0,"CODELEARN");
+   o = [];
+   s.forEach(function(pl) {
+      o.push(rectangular_extrude(pl, {w: 2, h: 2}));
+   });
+  return union(o);
+}
+function main(){
+    return scale (0.2, rotate([90, 0, 0], escriure()));
+}

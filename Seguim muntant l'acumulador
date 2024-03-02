@@ -1,0 +1,21 @@
+Ajudes:
+- Usa el sistema clàssic per construir la figura.
+- Crea un cilindre de radi de base i radi de sostre 10, altura 20 i amb una resolució de 32. Emmagatzema el resultat en una variable de nom a.
+- Crea una esfera de radi 10 i trasllada-la a les coordenades [0, 0, 20]. Emmagatzema el resultat en una variable de nom b.
+- Uneix les figures a i b, trasllada el resultat a les coordenades [0, 0, 3], i emmagatzema el resultat en una variable de nom c.
+- Crea un cub amb les dimensions [5, 5, 20]. Emmagatzem el resultat en una variable de nom d.
+- Trasllada la figura d fins a les coordenades [-15, -2.5, 0] i emmagatzema el resultat en una variable de nom e.
+- Trasllada la figura d fins a les coordenades [10, -2.5, 0] i emmagatzema el resultat en una variable de nom f.
+- Finalment, retorna la unió de les figures c, e i f.
+
+code:
+
+function main(){
+  a= cylinder ({r1: 10, r2: 10, h: 20, fn: 32});
+  b= translate ([0, 0, 20], sphere (10));
+  c= translate ([0, 0, 3], union (a, b));
+  d= cube([5, 5, 20]);
+  e= translate ([-15, -2.5, 0], d);
+  f= translate ([10, -2.5, 0], d);
+  return union(c, e, f);
+}

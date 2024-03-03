@@ -1,0 +1,13 @@
+function main(){
+  a= cylinder ({r1: 10, r2: 10, h: 20, fn: 32});
+  b= translate ([0, 0, 20], sphere (10));
+  c= translate ([0, 0, 3], union (a, b));
+  d= cube([5, 5, 20]);
+  e= translate ([-15, -2.5, 0], d);
+  f= translate ([10, -2.5, 0], d);
+  g= translate ([10, -2.5, 22.5], rotate([0, 90, 0], 
+  linear_extrude ({height: 5}, circle(2.5))));
+  h= translate ([-15, -2.5, 22.5], rotate([0, 90, 0], 
+  linear_extrude ({height: 5}, circle(2.5))));
+  return union(c, e, f, g, h);
+}

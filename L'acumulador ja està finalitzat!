@@ -1,0 +1,64 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+
+- Crea una nova funció peu().
+
+- En aquesta funció, crea una nova variable que contingui la figura resultant de crear un cilindre de radi de base 5, radi de sostre 2, altura 3 i resolució 4. Rota la figura 45º sobre l'eix de les z, i trasllada el resultat a les coordenades [0, 0, 2]. Emmagatzema aquesta figura en una variable de nom a.
+
+- En aquesta funció crea un cub de mides [7, 7, 2] i trasllada el resultat a les coordenades [-3.5, -3.5, 0] i emmagatzema el resultat en una variable de nom b.
+
+- Finalment, fes que la funció peu() retorni la unió de les variables a i b.
+
+- Crea la funció main() i posa-hi tot el que ve a continuació.
+
+- Crea un cilindre de radi de base i radi de sostre 10, amb una resolució de 32 i altura 20. Emmagatzema el resultat en una variable de nom a.
+
+- Crea una esfera de radi 10 i trasllada-la a les coordenades [0, 0, 20]. Emmagatzema el resultat en una variable de nom b.
+
+- Uneix les figures a i b, trasllada el resultat a les coordenades [0, 0, 3], i emmagatzema el resultat en una variable de nom c.
+
+- Crea un cub amb les dimensions [5, 5, 20] i que no sigui arrodonit. Emmagatzem el resultat en una variable de nom d.
+
+- Trasllada la figura d fins a les coordenades [-15, -2.5, 0] i emmagatzema el resultat en una variable de nom e.
+
+- Trasllada la figura d fins a les coordenades [10, -2.5, 0] i emmagatzema el resultat en una variable de nom f.
+
+- Crea un cercle de radi 2.5 i crea l'extrusió linial amb altura 5 per obtenir la figura en 3D. Rota el resultat 90º sobre l'eix de les y. Després trasllada el resultat a les coordenades [10, -2.5, 22.5] i emmagatzema el resultat en una variable de nom g.
+
+- Crea un cercle de radi 2.5 i crea l'extrusió linial amb altura 5 per obtenir la figura en 3D. Rota el resultat 90º sobre l'eix de les y. Després trasllada el resultat a les coordenades [-15, -2.5, 22.5] i emmagatzema el resultat en una variable de nom h.
+
+- Crea la unió de les figures c, e, f, g i h i trasllada el resultat a les coordenades [0, 0, 5]. Emmagatzema el resultat en una variable de nom i.
+
+- Crida la funció peu() i trasllada el resultat a les coordenades [-12.5, 0, 0]. Emmagatzema el resultat en una variable de nom j.
+
+- Crida la funció peu() i trasllada el resultat a les coordenades [12.5, 0, 0]. Emmagatzema el resultat en una variable de nom k.
+
+- Crida la funció peu() i trasllada el resultat a les coordenades [0, 0, 0]. Tot seguit escala el resultat en una proporció de 1.6 en els tres eixos. Emmagatzema el resultat en una variable de nom l.
+
+- Finalment, retorna la unió de les figures i, j, k i l.
+
+
+code:
+
+function peu(){
+  a= translate ([0, 0, 2], rotate([0, 0, 45], 
+  cylinder ({r1: 5, r2: 2, h: 3, fn: 4})));
+  b= translate ([-3.5, -3.5, 0], cube([7, 7, 2]));
+  return union(a, b);}
+function main(){
+  a= cylinder ({r1: 10, r2: 10, h: 20, fn: 32});
+  b= translate ([0, 0, 20], sphere (10));
+  c= translate ([0, 0, 3], union (a, b));
+  d= cube([5, 5, 20]);
+  e= translate ([-15, -2.5, 0], d);
+  f= translate ([10, -2.5, 0], d);
+  g= translate ([10, -2.5, 22.5], rotate([0, 90, 0], 
+  linear_extrude ({height: 5}, circle(2.5))));
+  h= translate ([-15, -2.5, 22.5], rotate([0, 90, 0], 
+  linear_extrude ({height: 5}, circle(2.5))));
+  i= translate([0, 0, 5], union(c, e, f, g, h));
+  j= translate([-12.5, 0, 0], peu());
+  k= translate([12.5, 0, 0], peu());
+  l= scale((1.6), translate([0, 0, 0], peu()));
+  return union(l, k, j, i);}

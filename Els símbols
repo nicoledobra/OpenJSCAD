@@ -1,0 +1,13 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea un cub de dimensions [50, 5, 20]. Emmagatzema el resultat en una variable de nom a.
+- Crea una esfera que no es trobi centrada i que tingui per radi 10. Emmagatzema el resultat en una variable de nom b.
+- Finalment, retorna la intersecció de les variables a i b.
+
+code:
+
+function main() {
+a = cube({size:[50, 5, 20]});
+b = sphere ({center: false, r: 10});
+return intersection (a, b);}

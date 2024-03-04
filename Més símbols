@@ -1,0 +1,13 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea un cub de dimensions [50, 5, 20]. Emmagatzema el resultat en una variable de nom a.
+- Crea una cilindre de radi de base i radi de sostre 2, amb altura 5.
+- Finalment, retorna la intersecció de les variables a i b, escalat en una proporció de 3 en tots els eixos.
+
+code:
+
+function main() {
+a = cube({size:[50, 5, 20]});
+b = cylinder ({r1: 2, r2: 2, h: 5});
+return scale((3),intersection (a, b));}

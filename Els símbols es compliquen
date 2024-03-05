@@ -1,0 +1,17 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea un cilindre de radi de base 4, radi de sostre 2 i altura 30. Emmagatzema la figura en una variable de nom a.
+- Crea una esfera de radi 4 i trasllada-la a les coordenades [0, 0, 5]. Emmagatzema la figura en una variable de nom b.
+- Crea la intersecció entre les figures a i b, i escala el resultat en una proporció de 2.5 en tots els eixos. Emmagatzema la figura en una variable de nom c.
+- Crea un cercle de radi 5 i genera l'extrusió linial d'altura 25, amb 360 girs i 50 capes. Emmagatzema el resultat en una variable de nom d.
+- Finalment, retorna la unió de les variables c i d.
+
+code:
+
+function main() {
+a = cylinder ({r1: 4, r2: 2, h: 30});
+b = translate([0, 0, 5], sphere (4));
+c = scale ((2.5), intersection (a, b));
+d = linear_extrude ( {height: 25,  twist: 360, slices: 50}, circle (5) );
+return union (c, d);}

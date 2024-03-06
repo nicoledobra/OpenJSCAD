@@ -1,0 +1,13 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea una esfera de radi 10 i trasllada-la a les coordenades [0, 0, 10]. Emmagatzema el resultat en una variable de nom a.
+- Crea una esfera de radi 10 i trasllada-la a les coordenades [0, 0, 0]. Emmagatzema el resultat en una variable de nom b.
+- Retorna la intersecció de les variables a i b.
+
+code:
+
+function main () {
+a = translate([0, 0, 10], sphere (10));
+b = translate([0, 0, 0], sphere (10));
+return intersection (a, b);}

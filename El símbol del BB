@@ -1,0 +1,25 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea una nova funció de nom cap().
+- En aquesta nova funció crea una esfera de radi 10 i trasllada-la a les coordenades [0, 0, 10]. Emmagatzema el resultat en una variable de nom a.
+- En aquesta nova funció crea un cub de dimensions [20, 20, 10] i trasllada'l a les coordenades [-10, -10, 0]. Emmagatzema el resultat en una variable de nom b.
+- En aquesta nova funció crea una variable de nom c i emmagatzema la intersecció de les figures a i b.
+- Finalment, fes que la funció cap() retorni la rotació de 180º en l'eix de les y de la figura c.
+- Crea la funció main().
+- En la funció main() crea una esfera de radi 18 i trasllada el resultat a les coordenades [0, 0, 18]. Emmagatzema el resultat en una variable de nom x.
+- Crida la funció cap() i trasllada el resultat a les coordenades [0, 0, 46]. Emmagatzema el resultat en una variable de nom y.
+- Retorna la unió entre les figures x i y, després d'haver-la escalat en una proporció de 0.6 en tots els seus eixos.
+
+code:
+
+function cap() {
+    a= translate([0, 0, 10], sphere(10));
+    b= translate([-10, -10, 0], cube([20, 20, 10]));
+    c= intersection (a, b);
+    return rotate([0, 180, 0], c);}
+    function main() {
+        x= translate([0, 0, 18], sphere(18));
+        y= translate([0, 0, 46], cap());
+        return scale(0.6, union(x, y));
+}

@@ -1,0 +1,13 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea un cub de costats 10. Emmagatzema el resultat en una variable de nom a.
+- Crea un cilindre de radi de base i radi de sostre 10, amb altura 10. Emmagatzema el resultat en una variable de nom b.
+- Retorna la diferència entre la figura a i b.
+
+code:
+
+function main () {
+  a=cube(10);
+  b = cylinder ({r1: 10, r2: 10, h: 10});
+  return difference(a, b);}

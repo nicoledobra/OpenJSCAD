@@ -1,0 +1,15 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea una esfera de radi 10 i emmagatzema la figura resultant en una variable de nom a.
+- Crea un cub de mida 10 i trasllada'l a les coordenades [0, -10, 0]. Emmagatzema la figura resultant en una variable de nom b.
+- Crea la diferència entre a i b, i emmagatzema el resultat en una variable de nom c.
+- Retorna la translació de la figura c a les coordenades [0, 0, 20].
+
+code:
+
+function main () {
+  a=sphere(10);
+  b=translate([0, -10, 0], cube(10));
+  c=difference(a, b);
+  return translate([0, 0, 20], c);}

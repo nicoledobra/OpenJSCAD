@@ -1,0 +1,21 @@
+Objectius:
+
+- Acabar l'exercici en menys de 500 segons.
+- Al final t'has de quedar amb 9 cèl·lules d'energia.
+- Utilitzar com a màxim 13 instruccions.
+
+code:
+
+function main() {
+  while(noExitPresent()){
+  move();
+    if(beepersPresent()){
+    pickBeeper();
+    turnRight();}
+    if(trayPresent()){
+      putBeeperInTray();
+       turnLeft();}}
+exit();
+}
+          
+          

@@ -1,0 +1,21 @@
+Ajudes:
+
+- Usa el sistema clàssic per construir la figura.
+- Crea un cub de costats 10. Emmagatzema el resultat en una variable de nom a.
+- Crea un cilindre de radi de base i radi de sostre 4, amb altura 10. Trasllada el resultat a les coordenades [5, 5, 0]. Emmagatzema el resultat en una variable de nom b.
+- Crea un cilindre de radi de base i radi de sostre 2, amb altura 10. Trasllada el resultat a les coordenades [5, 5, 0]. Emmagatzema el resultat en una variable de nom c.
+- Crea una variable de nom d i emmagatzema-hi la diferència entre les figures a i b.
+- Crea un cilindre de radi de base i radi de sostre 8, amb altura 10. Trasllada el resultat a les coordenades [5, 5, 0]. Emmagatzema el resultat en una variable de nom e.
+- Crea una variable de nom f i emmagatzema-hi la unió entre les figures c i d.
+- Retorna la diferència entre la figura e i f.
+
+code:
+
+function main(){
+    a= cube(10);
+    b= translate([5, 5, 0], cylinder({r1: 4, r2: 4, h: 10}));
+    c= translate([5, 5, 0], cylinder({r1: 2, r2: 2, h: 10}));
+    d= difference(a, b);
+    e= translate([5, 5, 0], cylinder({r1: 8, r2: 8, h: 10}));
+    f= union(c, d);
+    return difference(e, f);}

@@ -1,0 +1,24 @@
+ENUNCIAT:
+El túnel és molt llarg! Davant nostre hi veiem la sortida marcada clarament amb un cartell!
+Ajuda els nostres herois a dibuixar una figura com la del model.
+
+AJUDES:
+- Fes servir el sistema clàssic per dibuixar la figura. Usa com a coordenades 0, 0 a l'hora de fer la primitiva vector_text. Fes servir també el valor 2 per a l'alçada i el gruix (w i h a la primitiva rectangular_extrude).
+- Afegeix a la funció main() el codi per escriure un text en 3D, i passa-li la cadena "EXIT".
+- Crea una variable de nom a i emmagatzema-hi la unió de tots els elements de la variable o, canvia-li el color a verd ([0, 255, 0]) i rota el resultat 90º sobre l'eix x.
+- Finalment, retorna l'escalat en proporció de 0.5 de la figura a.
+
+CODE:
+function main(){
+    s= vector_text(0,0,"EXIT");
+    o = [];
+    s.forEach(function(pl) {
+        o.push(rectangular_extrude(pl, {w: 2, h: 2}));
+});
+a= rotate([90, 0, 0], color([0, 255, 0, 1], o));
+return scale(0.5, a);
+}
+
+
+R:
+EXIT (in green)

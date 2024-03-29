@@ -1,0 +1,16 @@
+ENUNCIAT:
+La porta es troba tancada! Cal obrir-la per sortir definitivament!
+Ajuda els nostres herois a dibuixar una figura com la del model!
+
+AJUDES:
+- Fes servir el sistema clàssic per crear la figura.
+- Crea un cub de mides [20, 10, 30], canvia-li el color perquè sigui de color vemell ([255, 0, 0]) i emmagatzema el resultat en una variable de nom a.
+- Crea un cub de mides [18, 10, 28], trasllada'l a les coordenades [1, 0, 0] i emmagatzema el resultat en una variable de nom b.
+- Finalment retorna la diferència entre les figures a i b.
+
+CODE:
+
+function main (){
+a=color([255, 0, 0], cube ( { size: [20, 10, 30] } ));
+b= translate( [1, 0, 0], cube ( { size: [18, 10, 28] } ));
+return difference(a, b);}

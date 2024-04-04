@@ -1,0 +1,16 @@
+Ajudes:
+
+- Crea una funció de nom peu().
+- En aquesta funció crea un cilindre de radi de base 3, radi de sostre 1, altura 7 i resolució 4. Gira la figura -90º sobre l'eix de les x i emmagatzema el resultat en una variable de nom x.
+. En aquesta funció crea un cub de dimensions [7, 7, 3] i trasllada'l a les coordenades [-4, 0, -3]. Emmagatzema el resultat en una variable de nom y.
+- Fes que la funció peu() retorni la diferència entre les variables x i y.
+- Crea la variable main() i fes que aquesta retorni la crida a la funció peu().
+
+code:
+
+function peu(){
+    x=rotate([-90, 0, 0], cylinder ({r1: 3, r2: 1, h: 7, fn: 4}));
+    y=translate([-4, 0, -3], cube([7, 7, 3]));
+    return difference(x, y);}
+function main(){
+    return peu();}

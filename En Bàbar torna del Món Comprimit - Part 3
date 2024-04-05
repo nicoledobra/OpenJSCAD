@@ -1,0 +1,47 @@
+Ajudes:
+
+- Fixa't que les funcions cap() i peu() ja estan escrites perquè les puguis usar sense haver-les de tornar a escriure.
+- Crea una funció de nom babar().
+- En aquesta funció crea un cilindre de radi de base 10, radi de sostre 9, alçada 25 i resolució 16. Escala el resultat en proporció 0.5 sobre l'eix de les y. Emmagatzema la figura resultant en una variable de nom z1.
+- En aquesta funció crida la funció peu() i trasllada la figura retornada a les coordenades [5, 3.5, 0]. Emmagatzema la figura resultant en una variable de nom z2.
+- En aquesta funció crida la funció peu() i trasllada la figura retornada a les coordenades [-5, 3.5, 0]. Emmagatzema la figura resultant en una variable de nom z3.
+- En aquesta funció crea un cilindre de radi de base 3, radi de sostre 3, alçada 14 i resolució 16. Gira la figura -20º sobre l'eix de les y i escala el resultat en una proporció de 0.5 sobre l'eix de les y. Trasllada el resultat a les coordenades [12, 1, 12] i emmagatzema'l en una variable de nom z4.
+- En aquesta funció crea un cilindre de radi de base 3, radi de sostre 3, alçada 14 i resolució 16. Gira la figura 20º sobre l'eix de les y i escala el resultat en una proporció de 0.5 sobre l'eix de les y. Trasllada el resultat a les coordenades [-12, 1, 12] i emmagatzema'l en una variable de nom z5.
+- En aquesta funció crida la funció cap() i trasllada el resultat retornat a les coordenades [-3, -2, 25]. Emmagatzema el resultat en una variable de nom z6.
+- Per acabar la funció babar() retorna la unió entre les variables z1, z2, z3, z4, z5 i z6.
+- Crea la funció main() i fes que aquesta retorni el resultat de cridar la funció babar(), girar el resultat 180º sobre l'eix de les z, traslladar-lo a les coordenades [0, 0, 10] i finalment, escalar-lo en una proporció de 0.6 sobre els tres eixos.
+
+code:
+
+function peu(){
+    var x = rotate([-90, 0, 0], cylinder({r1: 3, r2: 1, h: 7, fn: 4}));
+    var y = translate([-4, 0, -3], cube([7, 7, 3]));
+    return difference(x, y);
+}
+
+function cap(){
+    var a = translate([3, 6, 5], rotate([-90, 0, 0], cylinder({r1: 0.5, r2: 0, h: 5})));
+    var b = translate([-5, -5, 10], linear_extrude({height:0.2}, circle(8)));
+    var c = translate([3, 3, 10], cylinder({r1:4 , r2: 0, h: 15}));
+    var d = translate([3, 6.5, 4], rotate([0, 90, 0], cylinder({r1:0.5 , r2: 0, h: 8})));
+    var e = translate([3, 6.5, 4], rotate([0, -90, 0], cylinder({r1:0.5 , r2: 0, h: 8})));
+    var f = translate([3, 6.5, 4], rotate([-180, 0, 0], scale([1, 0.1, 1], cylinder({r1:5 , r2: 0, h: 16}))));
+    var g = cube([6, 6, 10]);
+    var h = translate([-1, 3, 5], rotate([90, 0, 0], linear_extrude({height:0.2}, circle(1))));
+    var i = translate([5, 3, 5], rotate([90, 0, 0], linear_extrude({height:0.2}, circle(1))));
+    return union(a, b, c, d, e, f, g, h, i);
+    
+}
+
+function babar(){
+    z1= scale([1, 0.5, 1], cylinder({r1: 10, r2: 9, h: 25, fn: 16}));
+    z2= translate([5, 3.5, 0], peu());
+    z3= translate([-5, 3.5, 0], peu());
+    z4= translate([12, 1, 12], scale([1, 0.5, 1], rotate([0, -20, 0], 
+    cylinder({r1: 3, r2: 3, h: 14, fn: 16}))));
+    z5= translate([-12, 1, 12], scale([1, 0.5, 1], rotate([0, 20, 0], 
+    cylinder({r1: 3, r2: 3, h: 14, fn: 16}))));
+    z6= translate([-3, -2, 25], cap());
+    return union(z1, z2, z3, z4, z5, z6);}
+    function main(){
+        return scale(0.6, translate([0, 0, 10], rotate([0, 0, 180], babar())));}

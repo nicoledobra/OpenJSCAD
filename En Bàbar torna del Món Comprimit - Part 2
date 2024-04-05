@@ -1,0 +1,35 @@
+Ajudes:
+
+- Crea una funció de nom cap().
+- En aquesta funció crea un cilindre de radi de base 0.5, radi de sostre 0 i alçada 5. Rota la figura resultant -90º sobre l'eix de les x i trasllada'l a les coordenades [3, 6, 5]. Emmagatzema el resultat en una variable de nom a.
+- En aquesta funció crea un cercle de radi 8. Realitza l'extrusió linial amb altura 0.2 del cercle. Trasllada la figura a les coordenades [-5, -5, 10] i emmagatzema el resultat en una variable de nom b.
+- En aquesta funció crea un cilindre de radi de base 4 i radi de sostre 0 i alçada 15. Trasllada la figura a les coordenades [3, 3, 10] i emmagatzema el resultat en una variable de nom c.
+- En aquesta funció crea un cilindre de radi de base 0.5 i radi de sostre 0 i alçada 8. Gira la figura resultant 90º sobre l'eix y. Trasllada la figura a les coordenades [3, 6.5, 4] i emmagatzema el resultat en una variable de nom d.
+- En aquesta funció crea un cilindre de radi de base 0.5 i radi de sostre 0 i alçada 8. Gira la figura resultant -90º sobre l'eix y. Trasllada la figura a les coordenades [3, 6.5, 4] i emmagatzema el resultat en una variable de nom e.
+- En aquesta funció crea un cilindre de radi de base 5 i radi de sostre 0 i alçada 16. Escala la figura en una proporció 0.1 en l'eix de les y. Gira la figura resultant -180º sobre l'eix y. Trasllada la figura a les coordenades [3, 6.5, 4] i emmagatzema el resultat en una variable de nom f.
+- En aquesta funció crea un cub de dimensions [6, 6, 10] i emmagatzema la figura en una variable de nom g.
+- En aquesta funció crea un cercle de radi 1 i realitza l'extrusió linial amb alçada 0.2. Gira la figura 90º sobre l'eix de les x i trasllada el resultat a les coordenades [-1, 3, 5]. Emmagatzema el resultat en una variable de nom h.
+- En aquesta funció crea un cercle de radi 1 i realitza l'extrusió linial amb alçada 0.2. Gira la figura 90º sobre l'eix de les x i trasllada el resultat a les coordenades [5, 3, 5]. Emmagatzema el resultat en una variable de nom i.
+- Per acabar la funció cap(), retorna la unió entre les figures a, b, c, d, e, f, g, h i i.
+- Crea la funció main() i fes que aquesta retorni la figura resultant de cridar la funció cap() després de rotar-la 180º sobre l'eix de les z.
+
+code:
+
+function cap(){
+    a=translate([3, 6, 5], rotate([-90, 0, 0], 
+    cylinder({r1: 0.5, r2: 0, h:5})));
+    b=translate([-5, -5, 10], linear_extrude ( {height: 0.2}, circle(8)));
+    c=translate([3, 3, 10], cylinder({r1: 4, r2: 0, h:15}));
+    d=translate([3, 6.5, 4], rotate([0, 90, 0], cylinder({r1: 0.5, r2: 0, h:8})));
+   e=translate([3, 6.5, 4], rotate([0, -90, 0], cylinder({r1: 0.5, r2: 0, h:8})));
+    f=translate([3, 6.5, 4], rotate([0, -180, 0], scale([1, 0.1, 1],
+    cylinder({r1: 5, r2: 0, h:16}))));
+    g=cube([6, 6, 10]);
+    h=translate ([-1, 3, 5], linear_extrude ( {height: 0.2}, rotate([90, 0, 0], 
+    circle(1))));
+    i=translate ([5, 3, 5], linear_extrude ( {height: 0.2}, rotate([90, 0, 0], 
+    circle(1))));
+
+return union (a, b, c, d, e, f, g, h, i);}
+function main(){
+    return rotate ([0, 0, 180], cap());}

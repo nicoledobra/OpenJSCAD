@@ -1,0 +1,21 @@
+Ajudes:
+
+- Fes servir el sistema clàssic per dibuixar la figura.
+
+- Crea un toroide amb resolució 4 i una rotació de l'angle interior de 80º. Gira aquesta figura 90º sobre l'eix de les x i trasllada'l a les coordenades [0, 0, 20]. Emmagatzema la figura en una variable de nom x.
+
+- Crea un cub de mida 2 que es trobi centrat. Trasllada el resultat a les coordenades [0, 0, 20] i canvia el color a vermell ([255, 0, 0]). Emmagatzema la figura en una variable de nom y.
+
+- Crea una esfera de radi 1.4 i trasllada-la a les coordenades [0, 0, 20]. Canvia el color d'aquesta figura a verd ([0, 255, 0]) i emmagatzema el resultat en una variable de nom z.
+
+- Retorna la unió de les figures x, y i z.
+
+function main () {
+  x= translate([0, 0, 20], rotate([90, 0, 0], 
+  torus ({fni: 4, roti: 45} ))); 
+  y=color([255, 0, 0], translate([0, 0, 20], 
+  cube ({size: 2, center: true})));
+  z=color([0, 255, 0], translate([0, 0, 20], 
+     sphere ({r:1.4, center: true})));
+  return  union(x, y, z);
+}

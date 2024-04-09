@@ -1,0 +1,15 @@
+Ajudes:
+
+- Fes servir el sistema clàssic per dibuixar la figura.
+- Crea un toroide de radi interior 1 i radi exterior 5. Gira aquesta figura 90º sobre l'eix de les y. Emmagatzema la figura resultant en una variable de nom a.
+- Crea un cilindre de radi de base i radi de sostre 1, amb altura 30. Gira aquesta figura 90º sobre l'eix de les x i 90º sobre l'eix de les y. Emmagatzema la figura resultant en una variable de nom b.
+- Retorna la unió entre les figures a i b, després d'haver-la traslladat a les coordenades [0, 0, 10].
+
+code:
+
+function main () {
+  a= rotate([0, 90, 0], torus ({ri: 1, ro: 5} )); 
+  b= rotate([90, 90, 0], cylinder({r1: 1, r2: 1, h:30}));
+  
+  return  translate([0, 0, 10], union(a, b));
+}

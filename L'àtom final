@@ -1,0 +1,34 @@
+Ajudes:
+
+- Fes servir el sistema clàssic per dibuixar la figura.
+- Crea un toroide de radi interior 0.5, radi exterior 5 i amb resolució 4 i una rotació de l'angle interior de 80º. Gira aquesta figura 90º sobre l'eix de les x i trasllada'l a les coordenades [0, 0, 20]. Emmagatzema la figura en una variable de nom x.
+- Crea un toroide de radi interior 0.5, radi exterior 5 i amb resolució 4 i una rotació de l'angle interior de 80º. Gira aquesta figura 90º sobre l'eix de les z i trasllada'l a les coordenades [0, 0, 20]. Emmagatzema la figura en una variable de nom x1.
+- Crea un toroide de radi interior 0.5, radi exterior 5 i amb resolució 4 i una rotació de l'angle interior de 80º. Gira aquesta figura 45º sobre l'eix de les x i trasllada'l a les coordenades [0, 0, 20]. Emmagatzema la figura en una variable de nom x2.
+- Crea un toroide de radi interior 0.5, radi exterior 5 i amb resolució 4 i una rotació de l'angle interior de 80º. Gira aquesta figura -45º sobre l'eix de les x i trasllada'l a les coordenades [0, 0, 20]. Emmagatzema la figura en una variable de nom x3.
+- Crea un cub de mida 2 que es trobi centrat. Trasllada el resultat a les coordenades [0, 0, 20] i canvia el color a vermell ([255, 0, 0]). Emmagatzema la figura en una variable de nom y.
+- Crea una esfera de radi 1.4 i trasllada-la a les coordenades [0, 0, 20]. Canvia el color d'aquesta figura a verd ([0, 255, 0]) i emmagatzema el resultat en una variable de nom z.
+- Crea una esfera de radi 1 i trasllada-la a les coordenades [0, 0, 25]. Canvia el color d'aquesta figura a blanc ([255, 255, 255]) i emmagatzema el resultat en una variable de no z1.
+- Crea una esfera de radi 1 i trasllada-la a les coordenades [0, 0, 15]. Canvia el color d'aquesta figura a blanc ([255, 255, 255]) i emmagatzema el resultat en una variable de nom z2.
+- Crea una esfera de radi 1 i trasllada-la a les coordenades [0, 5, 20]. Canvia el color d'aquesta figura a blanc ([255, 255, 255]) i emmagatzema el resultat en una variable de nom z3.
+- Crea una esfera de radi 1 i trasllada-la a les coordenades [0, -5, 20]. Canvia el color d'aquesta figura a blanc ([255, 255, 255]) i emmagatzema el resultat en una variable de nom z4.
+- Retorna la unió de les figures x, x1, x2, x3 y, z, z1, z2, z3 i z4.
+
+
+function main () {
+  x= translate([0, 0, 20], rotate([90, 0, 0], 
+  torus ({ri: 0.5, ro: 5, fni: 4, roti: 80} ))); 
+  x1= translate([0, 0, 20], rotate([0, 0, 90],
+  torus ({ri: 0.5, ro: 5, fni: 4, roti: 80} )));
+  x2= translate([0, 0, 20], rotate([45, 0, 0], 
+  torus ({ri: 0.5, ro: 5, fni: 4, roti: 80} )));
+  x3= translate([0, 0, 20], rotate([-45, 0, 0], 
+  torus ({ri: 0.5, ro: 5, fni: 4, roti: 80} )));
+  y=color([255, 0, 0], translate([0, 0, 20], 
+  cube ({size: 2, center: true})));
+  z= color([0, 255, 0], translate([0, 0, 20], sphere(1.4)));
+  z1= color([255, 255, 255], translate([0, 0, 25], sphere(1)));
+  z2= color([255, 255, 255], translate([0, 0, 15], sphere(1)));
+  z3= color([255, 255, 255], translate([0, 5, 20], sphere(1)));
+  z4= color([255, 255, 255], translate([0, -5, 20], sphere(1)));
+  return  union(x, x1, x2, x3, y, z, z1, z2, z3, z4);
+}

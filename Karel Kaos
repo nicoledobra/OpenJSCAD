@@ -1,0 +1,38 @@
+function main() {
+  repeat(3){
+    repeat(16){
+  move();
+    if(beepersPresent()){
+    pickBeeper();}
+    if(trayPresent()){
+      putBeeperInTray();} 
+      repeat(4){
+        if(trayNotFull()){
+        putBeeperInTray();} } }
+  turnLeft();
+  move();
+  turnLeft();
+  repeat(16){
+  move();
+    if(beepersPresent()){
+    pickBeeper();}
+    if(trayPresent()){
+      putBeeperInTray();} 
+      repeat(4){
+        if(trayNotFull()){
+        putBeeperInTray();} } }
+  turnRight();
+  move();
+  turnRight();}
+  while(noExitPresent()){
+  move();
+    if(beepersPresent()){
+    pickBeeper();}
+    if(trayPresent()){
+      putBeeperInTray();} 
+        if(trayNotFull()){
+        putBeeperInTray();} 
+    if(frontIsBlocked()){
+    turnLeft();}}
+exit();}
+          
